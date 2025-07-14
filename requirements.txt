@@ -1,1 +1,10 @@
 TensorBoard
+torch>=1.13
+torchvision
+numpy
+matplotlib
+scikit-image
+tqdm
+opencv-python
+Pillow
+scipy
