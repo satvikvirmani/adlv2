@@ -12,10 +12,10 @@ def install_requirements():
     print("Installing required packages...")
     
     requirements = [
-        "torch",
+        "torch>=1.13",
         "torchvision", 
         "tensorboard",
-        "numpy",
+        "numpy==1.26.4",
         "Pillow",
         "opencv-python",
         "matplotlib",
