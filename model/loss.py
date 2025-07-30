@@ -30,8 +30,9 @@ def pyr_Loss(x_gt, yhat, levels=3):
         Cin = image.size(1)
         kernel_torch, pad_sz = atw_kernel(ker_base, image.dtype, Cin, level)
 
-        # apply convolution
-        output = F.conv2d(image, kernel_torch.to(image.get_device()), stride=1, padding=int(pad_sz/2), groups=Cin)
+        # apply convolution - handle CPU tensors properly
+        device = image.device
+        output = F.conv2d(image, kernel_torch.to(device), stride=1, padding=int(pad_sz/2), groups=Cin)
         return output
 
     B = x_gt.size()[0]

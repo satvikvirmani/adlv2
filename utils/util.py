@@ -39,7 +39,6 @@ def makedirs_fn(*argv):
 # Configuration =========================================
 def read_config(config_dir):
     STEPS={}
-    config_dir = os.path.join(os.path.dirname(__file__), config_dir)
     with open(config_dir, 'rb') as file:
         config = json.load(file)
     #config.get('AnyParams', anyValues???)
