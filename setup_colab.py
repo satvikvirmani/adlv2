@@ -24,7 +24,7 @@ def install_requirements():
     
     for package in requirements:
         try:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+            subprocess.check_call([sys.executable, "-m", "--quiet", "pip", "install", package])
             print(f"✓ Installed {package}")
         except subprocess.CalledProcessError:
             print(f"✗ Failed to install {package}")
@@ -70,9 +70,9 @@ def setup_colab():
     else:
         print("⚠ Will train on CPU (slower but functional)")
     
-    print("\nNext steps:")
-    print("1. Upload your dataset to Google Drive")
-    print("2. Run: python run_train_colab.py")
+    # print("\nNext steps:")
+    # print("1. Upload your dataset to Google Drive")
+    # print("2. Run: python run_train_colab.py")
     
     return True
 
