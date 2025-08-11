@@ -62,7 +62,10 @@ class Trainer(abc.ABC):
 
         steps = epochs * len(train_data)
         for epoch in range(epochs):
+            print(f"Epoch: {epoch}")
+            
             for i, batch_i in enumerate(train_data):
+                print(f"Batch: {i+1}/{len(train_data)}")
                 step_i = epoch * len(train_data) + i
 
                 ############################################
